@@ -1,0 +1,23 @@
+.details{
+    padding: 20px;
+}
+.casesTitle{
+padding: 10px 0;
+font-size: 21px;
+}
+.casesCount{
+    font-size: 18px;
+    font-weight: bold;
+}
+.blue{
+    color:rgb(26, 26, 247)
+}
+.green{
+    color: rgb(15, 202, 15);
+}
+.yellow{
+    color: rgb(8, 8, 8);
+}
+.red{
+    color: rgb(255, 43, 43);
+}
