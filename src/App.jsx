@@ -4,6 +4,7 @@ import './App.css'
 import State from './components/state/State'
 import TotalCases from './components/TotalCases/TotalCases'
 import PieChart from './components/PieChart/PieChart'
+import LineChart from './components/LineChart/LineChart'
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
         </div>
 
         <div className='card'>
-          <PieChart />
+          <LineChart />
         </div>
       </div>
     </main>

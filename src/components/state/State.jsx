@@ -4,6 +4,7 @@ import Cases from '../Cases/Cases';
 import { useDispatch, useSelector } from 'react-redux';
 import { stateCases, stateList, totalCases } from '../../redux/action/casesAction';
 import Loader from '../loader/Loader';
+import Map from '../Map/Map';
 
 
 const State = () => {
@@ -55,6 +56,7 @@ const State = () => {
                 {
                     loading ? <div className='totalCases'> <Loader /></div> : stateCount?.data && selectedStateId != 0 ? <Cases total={stateCount.data ? stateCount.data.totalCases : 0} active={stateCount.data ? stateCount.data.activeCases : 0} recover={stateCount.data ? stateCount.data.recovered : 0} death={stateCount.data ? stateCount.data.deaths : 0} /> : <Cases total={totalCount ? totalCount.totalCases : 0} active={totalCount ? totalCount.activeCases : 0} recover={totalCount ? totalCount.recovered : 0} death={totalCount ? totalCount.deaths : 0} />
                 }
+                <Map  selectedStateId={selectedStateId} setSelectedStateId={setSelectedStateId} />
             </div>
         </div>
     );

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './PieChart.css'
-import Plot from 'react-plotly.js'
+import Plot from 'react-plotly.js';
 import { useSelector } from 'react-redux';
 
-const PieChart = () => {
+const LineChart = () => {
     const [values, setValues] = useState([])
     const { totalCount, stateCount, loading } = useSelector((state) => state.covidState);
 
@@ -17,20 +16,22 @@ const PieChart = () => {
         }
     }, [loading, totalCount, stateCount]);
 
-
-    var data = [
-        {
-            values,
-            labels: ["Deaths", "Recovered", "ActiveCases", "TotalCases"],
-            type: "pie",
-        },
-    ];
+    var trace2 = {
+        x: ['deaths','recovered','activeCases','totalCases'],
+        y: values,
+        mode: 'lines+markers',
+        name: 'Scatter + Lines'
+      };
+      var data = [  trace2 ];
+      var layout = {
+        title:stateCount?.name?stateCount?.name:"India"
+      };
     return (
         <Plot
             data={data}
-            layout={{ title: stateCount?.name?stateCount?.name:"India" }}
+            layout={layout}
         />
     )
 }
 
-export default PieChart
+export default LineChart
